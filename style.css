@@ -18,7 +18,9 @@ body {
     border-width:3px;
 }
 #stop {
-    background:#575757;
+    border-color:#4e4e4e;
+    border-width:3px;
+    background-color:#fff;
 }
 #minify {
     background-color:#7947c2;

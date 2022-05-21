@@ -1,5 +1,6 @@
 window.toRun = true
 window.dataShown = true
+window.codeBeforeMinified = ""
 const cookieName = "zhangzheheng12345-visual-bf-web-code"
 $("#stop").hide()
 
@@ -30,5 +31,6 @@ function saveCode() {
     $.cookie(cookieName, $("#text").val(), {expires:365})
 }
 function minifyButton() {
+    window.codeBeforeMinified = $("#text").val()
     $("#text").val(minify($("#text").val()))
 }
