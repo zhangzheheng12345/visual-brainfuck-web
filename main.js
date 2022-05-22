@@ -3,6 +3,7 @@ window.dataShown = true
 window.codeBeforeMinified = ""
 const cookieName = "zhangzheheng12345-visual-bf-web-code"
 $("#stop").hide()
+$("#revert").hide()
 
 let text = $.cookie(cookieName)
 if(text) {
@@ -29,8 +30,17 @@ function clearCode() {
 }
 function saveCode() {
     $.cookie(cookieName, $("#text").val(), {expires:365})
+    $("#revert").hide()
+    $("#minify").show()
 }
 function minifyButton() {
     window.codeBeforeMinified = $("#text").val()
     $("#text").val(minify($("#text").val()))
+    $("#revert").show()
+    $("#minify").hide()
+}
+function revert() {
+    $("#text").val(window.codeBeforeMinified)
+    $("#revert").hide()
+    $("#minify").show()
 }
