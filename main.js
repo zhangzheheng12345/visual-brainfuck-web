@@ -4,6 +4,7 @@ window.codeBeforeMinified = ""
 const cookieName = "zhangzheheng12345-visual-bf-web-code"
 $("#stop").hide()
 $("#revert").hide()
+$("#menu").hide()
 
 let text = $.cookie(cookieName)
 if(text) {
@@ -43,4 +44,7 @@ function revert() {
     $("#text").val(window.codeBeforeMinified)
     $("#revert").hide()
     $("#minify").show()
+}
+function toggleMenu() {
+    $("#menu").slideToggle();
 }

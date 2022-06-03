@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>visual-brainfuck-web</title>
         <link rel="stylesheet" type="text/css" href="color.css"/>
         <link rel="stylesheet" type="text/css" href="style.css"/>
     </head>
     <body>
+    <div id="topBar">
+        <button id="menuButton" onclick="toggleMenu()">
+            <img src="svgs/menu.svg" type="image/svg+xml" />
+        </button>
+        <div id="menu">
+            <a href="https://github.com/zhangzheheng12345/visual-brainfuck-web">GitHub Repo</a>
+            <br/>
+            <a href="https://github.com/zhangzheheng12345">My Profile</a>
+        </div>
+    </div>
+    <div id="mainBox">
         <button id="run" class="tool-button" title="run the program" onclick="runCode()">
             <img src="svgs/play.svg" type="image/svg+xml" /></button>
         <button id="stop" class="tool-button" title="stop the program" onclick="window.toRun = false;">
@@ -66,15 +78,15 @@
 >++.
             </textarea>
         </div>
-        <br/><br/>
-        <hr color="#888" width="80%" size="1px"/>
-        <p> Github Repo: <a href="https://github.com/zhangzheheng12345/visual-brainfuck-web">visual-brainfuck-web</a></p>
-        <p> Brainf*ck Wiki: <a href="https://esolangs.org/wiki/brainfuck">Brainf**k</a></p>
-        <p> Author's Github: <a href="https://github.com/zhangzheheng12345">zhangzheheng12345</a></p>
-        <p> License: GPL 2.0</p>
+        <br/><br/><br/>
+        <p> Don't know what Brainf*ck is? </p>
+        <p> &#10230; <a href="https://esolangs.org/wiki/brainfuck">Brainf**k</a></p>
+        <br/>
+        <p> Licensed under GPL 2.0</p>
         <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
         <script src="run.js"></script>
         <script src="main.js"></script>
+    </div>
     </body>
 </html>

@@ -1,5 +1,44 @@
-body {
+html, body {
+    padding:0px;
+    margin:0px;
+}
+
+#topBar {
+    width:100%;
+    height:40px;
+    background-color:var(--grey);
+    box-shadow:0px 3px 4px var(--light-grey);
+    padding:3px;
+}
+#menuButton {
+    border-radius:5px;
+    border-color:var(--very-dark-grey);
+    border-width:2px;
+    background-color:#fff; 
+    padding:4px; 
+    position:absolute;
+    top:2px;
+    right:5px;
+    z-index:99;
+}
+#menu {
+    position:absolute;
+    right:5px;
+    top:50px;
+    border-radius:5px;
+    padding:7px;
+    background-color:var(--grey);
+}
+#menu > a {
+    color:#fff;
+    font-size:17px;
+    font-family:Calibri, sans-serif;
+    text-decoration:none;
+}
+
+#mainBox {
     padding:5%;
+    padding-top:25px;
 }
 
 .tool-button {
@@ -158,7 +197,7 @@ span {
 p {
     text-align:center;
     color:var(--grey);
-    font-size:15px;
+    font-size:17px;
     font-family:Calibri, sans-serif;
 }
 
