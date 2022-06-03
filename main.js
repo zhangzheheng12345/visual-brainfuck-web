@@ -46,5 +46,5 @@ function revert() {
     $("#minify").show()
 }
 function toggleMenu() {
-    $("#menu").slideToggle();
+    $("#menu").slideToggle("fast");
 }
