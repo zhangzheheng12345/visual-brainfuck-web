@@ -90,7 +90,7 @@ function runCode() {
         }
         // Update the data area in the end
         for(let i = 1; i < data.length; i++)
-            $("#data").append($("<div id='"+i+"'></div>").text(data[i]));
+            $("#data").append($(`<div id=${i}></div>`).text(data[i]));
         updatePtr(0)
         toggle()
     }
@@ -106,7 +106,7 @@ function runCode() {
                 dindex += 1
                 if(dindex >= data.length) {
                     data.push(0)
-                    $("#data").append($("<div id="+(data.length-1)+"></div>").text("0"))
+                    $("#data").append($(`<div id=${data.length-1}></div>`).text("0"))
                 }
                 updatePtr(dindex-1)
             } else if(code[cindex] == "<") {

@@ -11,7 +11,7 @@ html, body {
     padding:3px;
 }
 #menuButton {
-    border-radius:5px;
+    border-radius:8px;
     border-color:var(--very-dark-grey);
     border-width:2px;
     background-color:#fff; 
@@ -25,7 +25,7 @@ html, body {
     position:absolute;
     right:5px;
     top:55px;
-    border-radius:10px;
+    border-radius:8px;
     padding:8px;
     padding-right:12px;
     background-color:var(--very-dark-grey);
@@ -41,7 +41,6 @@ html, body {
 
 #mainBox {
     padding:5%;
-    padding-top:25px;
 }
 
 .tool-button {
