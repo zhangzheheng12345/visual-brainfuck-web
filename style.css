@@ -1,6 +1,7 @@
 html, body {
     padding:0px;
     margin:0px;
+    scrool-behavior:smooth;
 }
 
 #topBar {
@@ -156,6 +157,7 @@ span {
     resize:none;
     overflow:auto;
     box-shadow:0px 3px 4px var(--light-grey);
+    scroll-behavior:smooth;
 }
 
 #text:focus, #io:focus {
