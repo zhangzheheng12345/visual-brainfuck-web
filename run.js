@@ -89,10 +89,6 @@ function runCode() {
                 getInput()
             } else if(code[cindex] == ".") {
                 output()
-            } else if(code[cindex] == "#") {
-                while(cindex < code.length && code[cindex] != "\n") {
-                    cindex += 1
-                }
             }
             cindex++
         }
@@ -133,10 +129,6 @@ function runCode() {
                 getInput()
             } else if(code[cindex] == ".") {
                 output()
-            } else if(code[cindex] == "#") {
-                while(cindex < code.length && code[cindex] != "\n") {
-                    cindex += 1
-                }
             }
             cindex += 1
             if(window.toRun) {
