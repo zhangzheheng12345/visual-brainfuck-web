@@ -20,7 +20,7 @@ html, body {
     font-size:18px;
     border-radius:10px;
     position:absolute;
-    left:7px;
+    left:10px;
     top:7px;
     font-family:Courier, Menlo, Consolas, monospace;
     font-weight:bolder;
@@ -54,7 +54,7 @@ html, body {
 }
 #menu > div > a {
     color:#fff;
-    font-size:18px;
+    font-size:17px;
     font-family:Calibri, sans-serif;
     letter-spacing:1px;
     text-decoration:none;
