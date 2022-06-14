@@ -27,15 +27,16 @@ html, body {
     letter-spacing:3px;
 }
 #menuButton {
-    border-radius:8px;
-    border-color:var(--very-dark-grey);
-    border-width:2px;
-    background-color:#fff; 
-    padding:4px; 
+    border-width:0px;
+    background-color:var(--very-dark-grey);
+    padding:6px;
     position:absolute;
     top:2px;
     right:5px;
     z-index:99;
+}
+#menuButton > * {
+    transform:scale(1.5, 1.6);
 }
 #menu {
     position:absolute;
