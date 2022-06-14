@@ -46,7 +46,7 @@ function runCode() {
         $("#io").val($("#io").val() + String.fromCharCode(data[dindex]))
     }
     function updatePtr(origin) { // origin is where the ptr used to be
-        $("#"+origin).css({"background-color":"#808080", "transform":"scale(1.0, 1.0)"})
+        $("#"+origin).css({"background-color":"#888", "transform":"scale(1.0, 1.0)"})
         $("#"+dindex).css({"background-color":"#222", "transform":"scale(1.05, 1.1)"})
     }
     function toggle() {

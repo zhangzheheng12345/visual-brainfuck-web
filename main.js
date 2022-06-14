@@ -2,9 +2,8 @@ window.toRun = true
 window.dataShown = true
 window.codeBeforeMinified = ""
 const cookieName = "zhangzheheng12345-visual-bf-web-code"
-$("#stop").hide()
-$("#revert").hide()
-$("#menu").hide()
+$("#run").fadeIn()
+$("#minify").fadeIn()
 
 let text = $.cookie(cookieName)
 if(text) {

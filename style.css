@@ -44,7 +44,6 @@ html, body {
     border-radius:8px;
     padding:5px;
     background-color:var(--very-dark-grey);
-    box-shadow:0px 3px 4px var(--light-grey);
 }
 #menu > div {
     background-color:var(--dark-grey);
@@ -55,8 +54,7 @@ html, body {
 #menu > div > a {
     color:#fff;
     font-size:17px;
-    font-family:Calibri, sans-serif;
-    letter-spacing:1px;
+    font-family:Courier, Menlo, Consolas, monospace;
     text-decoration:none;
     padding:5px;
 }
@@ -74,6 +72,7 @@ html, body {
     border-width:0px;
     border-radius:10px;
     box-shadow:0px 3px 4px var(--light-grey);
+    display:none;
 }
 #run {
     background-color:var(--green);
