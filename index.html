@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>visual-brainfuck-web</title>
+        <link rel="stylesheet" type="text/css" href="color.css"/>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+    <body>
+    <div id="topBar">
+        <div id="bfLogo">+,>[</div>
+        <button id="menuButton" onclick="toggleMenu()">
+            <img src="svgs/menu.svg" type="image/svg+xml" />
+        </button>
+        <div id="menu" style="display:none;">
+            <div><a href="https://github.com/zhangzheheng12345/visual-brainfuck-web">GitHub Repo</a></div>
+            <div><a href="https://github.com/zhangzheheng12345">My Profile</a></div>
+            <div><a href="https://esolangs.org/wiki/brainfuck">Brainfuck Wiki</a></div>
+        </div>
+    </div>
+    <div id="mainBox">
+        <button id="run" class="tool-button" title="run the program" onclick="runCode()">
+            <img src="svgs/play.svg" type="image/svg+xml" /></button>
+        <button id="stop" class="tool-button" title="stop the program" onclick="window.toRun = false;">
+            <img src="svgs/stop.svg" type="image/svg+xml" /></button>
+        <button id="minify" class="tool-button" title="minify the codes" onclick="minifyButton()">
+            <img src="svgs/lightning.svg" type="image/svg+xml" /></button>
+        <button id="revert" class="tool-button" title="revert the codes" onclick="revert()">
+            <img src="svgs/revert.svg" type="image/svg+xml" /></button>
+        <input id="speed" type="range" min="0" max="100" value="60" step="2" title="change the speed"/>
+        <br/>
+        <div id="wrapData">
+            <button id="showData" onclick="toggleData()">
+                <img src="svgs/triangle.svg"></img>
+            </button>
+            <div id="data">
+                <div id="1">0</div>
+            </div>
+            <div id="dataHiddenReminder" hidden>DATA AREA HIDDEN</div>
+            
+        </div>
+        <div id="wrapText">
+            <div id="box">
+                <input id="io" title="input & output"/>
+                <button id="clearCode" onclick="clearCode()">
+                    <img src="svgs/trash.svg" type="image/svg+xml" />
+                </button>
+            </div>
+            <textarea id="text" onchange="saveCode()">
+            # This program will output "Hello world!"
+# '#' declares a single line comment
++++++ +++
+[
+    >++++
+    [
+        >++
+        >+++
+        >+++
+        >+
+        <<<<-
+    ]
+    >+
+    >+
+    >-
+    >>+
+    [<]
+    <-
+]
+
+>>.
+>---.
++++++ ++..+++.
+>>.
+<-.
+<.
++++.----- -.----- ---.
+>>+.
+>++.
+            </textarea>
+        </div>
+        <br/><br/><br/>
+        <p> Licensed under GPL 2.0</p>
+        <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        <script src="run.js"></script>
+        <script src="main.js"></script>
+    </div>
+    </body>
+</html>
