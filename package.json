@@ -1,0 +1,10 @@
+{
+    "name": "visual-brainfuck-web",
+    "scripts": {
+        "dev": "vite",
+        "build":"vite build"
+    },
+    "dependencies": {
+        "vite": "^2.9.12"
+    }
+}
