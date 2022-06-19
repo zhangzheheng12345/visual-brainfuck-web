@@ -35,10 +35,9 @@
                 <img src="svgs/triangle.svg"/>
             </button>
             <div id="data">
-                <div id="1">0</div>
+                <div id="1" v-for="item in context.data">{{item}}</div>
             </div>
             <div id="dataHiddenReminder" hidden>DATA AREA HIDDEN</div>
-            
         </div>
         <div id="wrapText">
             <div id="box">
@@ -83,8 +82,10 @@
         <p> Licensed under GPL 2.0</p>
         <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-        <script type="module" src="run.js"></script>
-        <script type="module" src="main.js"></script>
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="dataarea.js"></script>
+        <script src="run.js"></script>
+        <script src="main.js"></script>
     </div>
     </body>
 </html>
