@@ -14,15 +14,15 @@ html, body {
 #bfLogo {
     color:var(--very-dark-grey);
     background-color:#fff;
-    padding:6px;
     padding-left:12px;
     padding-right:12px;
-    font-size:18px;
-    border-radius:10px;
+    padding-bottom:3px;
+    font-size:22px;
+    border-radius:15px;
     position:absolute;
     left:10px;
-    top:7px;
-    font-family:Courier, Menlo, Consolas, monospace;
+    top:9px;
+    font-family:"TheGoodMonolith", Courier, Menlo, Consolas, monospace;
     font-weight:bolder;
     letter-spacing:3px;
 }
@@ -55,7 +55,7 @@ html, body {
 #menu > div > a {
     color:#fff;
     font-size:17px;
-    font-family:Courier, Menlo, Consolas, monospace;
+    font-family:"SF Mono", Courier, Menlo, Consolas, monospace;
     text-decoration:none;
     padding:5px;
 }
@@ -151,8 +151,8 @@ span {
     border-radius:0px;
     background-color:var(--very-dark-grey);
     color:#fff;
-    font-size:17px;
-    font-family:Courier, Menlo, Consolas, monospace;
+    font-size:16px;
+    font-family:"SF Mono", Courier, Menlo, Consolas, monospace;
     box-sizing:border-box;
     resize:none;
     overflow:auto;
@@ -205,12 +205,13 @@ span {
     border-radius:5px;
     border-width:0px;
     padding:5px;
+    padding-left:10px;
     background-color:#fff;
     margin:5px;
     width:75%;
     color:var(--very-dark-grey);
     font-size:18px;
-    font-family:Courier, Menlo, Consolas, monospace;
+    font-family:"SF Mono", Courier, Menlo, Consolas, monospace;
 }
 
 #dataHiddenReminder {
