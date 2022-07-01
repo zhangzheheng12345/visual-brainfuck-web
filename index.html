@@ -22,7 +22,7 @@
         </div>
     </div>
     <div id="mainBox">
-        <button id="run" class="tool-button" title="run the program" onclick="runCode()">
+        <button id="run" class="tool-button" title="run the program" @click="runCode()">
             <img src="svgs/play.svg" type="image/svg+xml" /></button>
         <button id="stop" class="tool-button" title="stop the program" onclick="window.toRun = false;">
             <img src="svgs/stop.svg" type="image/svg+xml" /></button>
@@ -37,7 +37,7 @@
                 <img src="svgs/triangle.svg"/>
             </button>
             <div id="data">
-                <div id="1" v-for="item in context.data">{{item}}</div>
+                <div v-for="(item, index) in data" :class="{ selected:(ptr == index) }">{{item}}</div>
             </div>
             <div id="dataHiddenReminder" hidden>DATA AREA HIDDEN</div>
         </div>
@@ -82,12 +82,11 @@
         </div>
         <br/><br/><br/>
         <p> Licensed under GPL 2.0</p>
-        <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-        <script src="https://unpkg.com/vue@next"></script>
-        <script src="dataarea.js"></script>
-        <script src="run.js"></script>
-        <script src="main.js"></script>
     </div>
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="run.js"></script>
+    <script src="main.js"></script>
     </body>
 </html>

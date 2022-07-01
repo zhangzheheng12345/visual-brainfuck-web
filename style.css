@@ -1,7 +1,7 @@
 html, body {
     padding:0px;
     margin:0px;
-    scrool-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 #topBar {
@@ -181,7 +181,7 @@ span {
     justify-content:center;
 }
 
-#data > * {
+#data > div {
     background-color:var(--grey);
     margin:2px;
     margin-left:4px;
@@ -193,6 +193,10 @@ span {
     color:#fff;
     font-size:18px;
     font-family:sans-serif;
+}
+#data > div.selected {
+    background-color:var(--very-dark-grey);
+    transform:scale(1.05, 1.1);
 }
 
 #box {
