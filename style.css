@@ -45,6 +45,7 @@ html, body {
     border-radius:8px;
     padding:5px;
     background-color:var(--very-dark-grey);
+    z-index:99;
 }
 #menu > div {
     background-color:var(--dark-grey);
@@ -73,7 +74,6 @@ html, body {
     border-width:0px;
     border-radius:10px;
     box-shadow:0px 3px 4px var(--light-grey);
-    display:none;
 }
 #run {
     background-color:var(--green);
@@ -156,7 +156,6 @@ span {
     box-sizing:border-box;
     resize:none;
     overflow:auto;
-    box-shadow:0px 3px 4px var(--light-grey);
     scroll-behavior:smooth;
 }
 

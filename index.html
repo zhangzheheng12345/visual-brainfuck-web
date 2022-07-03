@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>visual-brainfuck-web</title>
-        <link href="https://fonts.cdnfonts.com/css/thegoodmonolith" rel="stylesheet">
-        <link href="https://fonts.cdnfonts.com/css/sf-mono?styles=36552" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="color.css"/>
-        <link rel="stylesheet" type="text/css" href="style.css"/>
-    </head>
-    <body>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>visual-brainfuck-web</title>
+    <link href="https://fonts.cdnfonts.com/css/thegoodmonolith" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/sf-mono?styles=36552" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="color.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
     <div id="topBar">
         <div id="bfLogo">+,>[</div>
         <button id="menuButton" onclick="toggleMenu()">
@@ -22,19 +24,19 @@
         </div>
     </div>
     <div id="mainBox">
-        <button id="run" class="tool-button" title="run the program" @click="runCode()">
+        <button id="run" class="tool-button" title="run the program" v-show="!toRun" @click="runCode()">
             <img src="svgs/play.svg" type="image/svg+xml" /></button>
-        <button id="stop" class="tool-button" title="stop the program" onclick="window.toRun = false;">
+        <button id="stop" class="tool-button" title="stop the program" v-show="toRun" @click="toRun = false; textareaReadonly = false">
             <img src="svgs/stop.svg" type="image/svg+xml" /></button>
-        <button id="minify" class="tool-button" title="minify the codes" onclick="minifyButton()">
+        <button id="minify" class="tool-button" title="minify the codes" v-show="!minified" @click="minifyButton()">
             <img src="svgs/lightning.svg" type="image/svg+xml" /></button>
-        <button id="revert" class="tool-button" title="revert the codes" onclick="revert()">
+        <button id="revert" class="tool-button" title="revert the codes" v-show="minified" @click="revert()">
             <img src="svgs/revert.svg" type="image/svg+xml" /></button>
-        <input id="speed" type="range" min="0" max="100" value="60" step="2" title="change the speed"/>
-        <br/>
+        <input id="speed" type="range" min="0" max="300" v-model="speed" step="2" title="change the speed" />
+        <br />
         <div id="wrapData">
             <button id="showData" onclick="toggleData()">
-                <img src="svgs/triangle.svg"/>
+                <img src="svgs/triangle.svg" />
             </button>
             <div id="data">
                 <div v-for="(item, index) in data" :class="{ selected:(ptr == index) }">{{item}}</div>
@@ -43,50 +45,21 @@
         </div>
         <div id="wrapText">
             <div id="box">
-                <input id="io" title="input & output"/>
-                <button id="clearCode" onclick="clearCode()">
+                <input id="io" title="input & output" v-model="io"/>
+                <button id="clearCode" @click="clearCode()">
                     <img src="svgs/trash.svg" type="image/svg+xml" />
                 </button>
             </div>
-            <textarea id="text" onchange="saveCode()">
-# This program will output "Hello world!"
-# '#' declares a single line comment
-+++++ +++
-[
-    >++++
-    [
-        >++
-        >+++
-        >+++
-        >+
-        <<<<-
-    ]
-    >+
-    >+
-    >-
-    >>+
-    [<]
-    <-
-]
-
->>.
->---.
-+++++ ++..+++.
->>.
-<-.
-<.
-+++.----- -.----- ---.
->>+.
->++.
-            </textarea>
+            <textarea id="text" :value="codes" @input="codes = $event.target.value; saveCode()"
+                :readonly="textareaReadonly"></textarea>
         </div>
-        <br/><br/><br/>
+        <br /><br /><br />
         <p> Licensed under GPL 2.0</p>
     </div>
     <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="run.js"></script>
     <script src="main.js"></script>
-    </body>
+</body>
+
 </html>

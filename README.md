@@ -6,7 +6,7 @@ A Brainf\*ck interpreter online. Visit [visual-brainfuck-web Github Page](https:
 
 If you don't have any idea about what Brainf\*ck exactly is, visit [Brainf\*ck Wiki](https://esolangs.org/wiki/brainfuck).
 
-The website use jQuery and MVC.
+The website use Vue.
 
 ## Usage
 
@@ -18,12 +18,14 @@ The green triangle button runs the Brainf\*ck code in the large text area. The g
 
 Click the purple button with a lightning in the middle. It will remove comments, spaces, tabs and line breaks in your code.
 
+If you want to revert it back just click it again.
+
 ### View program data
 
 The grey triangle button shows or hides the data area. The data area will show you how the program changes the pointer's position and changes the data in an obvious way.
 ( The darker and bigger block is where the pointer located. )
 
-If the data area is hidden, the program will be run without updating the data area, which means it will run faster. The data area will be updated when the program finishes.
+If the data area is hidden, the program will be run without delay, which means it will run faster. The data area will be updated when the program finishes.
 
 The data area won't limit the number of the cells.
 
