@@ -1,6 +1,6 @@
 # visual-brainfuck-web
 
-![](imgs/website.jpeg)
+![Website Image](imgs/website.jpeg)
 
 A Brainf\*ck interpreter online. Visit [visual-brainfuck-web Github Page](https://zhangzheheng12345.github.io/visual-brainfuck-web) to have a try.
 
