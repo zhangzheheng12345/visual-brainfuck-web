@@ -12,6 +12,20 @@ function minify(origin) {
 
 const bfFileName = "zhangzheheng12345-visual-bf-web-code"
 
+const menu = Vue.createApp({
+    data() {
+        return {
+            menuHidden: true
+        }
+    },
+    methods: {
+        toggleMenu() {
+            this.menuHidden = !this.menuHidden
+        }
+    }
+})
+menu.mount("#topBar")
+
 const app = Vue.createApp({
     data() {
         return {
@@ -49,7 +63,8 @@ const app = Vue.createApp({
 +++.----- -.----- ---.
 >>+.
 >++.`, // Defaultcode in textarea
-            textareaReadonly: false
+            textareaReadonly: false,
+            dataHidden: false
         }
     },
     created() {
@@ -68,7 +83,6 @@ const app = Vue.createApp({
             let iindex = 0
             let stack = []
             // Initializing data area
-            // TODO: Remove all the jQuery operations
             ctx.textareaReadonly = true
             let code = minify(ctx.codes)
             let input = ctx.io
@@ -167,6 +181,9 @@ const app = Vue.createApp({
         clearCode() {
             this.codes = ""
             window.localStorage.removeItem(bfFileName) // The storage will also be cleared
+        },
+        toggleData() {
+            this.dataHidden = !this.dataHidden
         }
     }
 })

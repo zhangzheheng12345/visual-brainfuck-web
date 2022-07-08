@@ -14,10 +14,10 @@
 <body>
     <div id="topBar">
         <div id="bfLogo">+,>[</div>
-        <button id="menuButton" onclick="toggleMenu()">
+        <button id="menuButton" @click="toggleMenu()">
             <img src="svgs/menu.svg" type="image/svg+xml" />
         </button>
-        <div id="menu" style="display:none;">
+        <div id="menu" v-show="!menuHidden">
             <div><a href="https://github.com/zhangzheheng12345/visual-brainfuck-web">GitHub Repo</a></div>
             <div><a href="https://github.com/zhangzheheng12345">My Profile</a></div>
             <div><a href="https://esolangs.org/wiki/brainfuck">Brainfuck Wiki</a></div>
@@ -35,13 +35,13 @@
         <input id="speed" type="range" min="0" max="300" v-model="speed" step="2" title="change the speed" />
         <br />
         <div id="wrapData">
-            <button id="showData" onclick="toggleData()">
+            <button id="showData" :class="{ toRotate:!dataHidden }" @click="toggleData()">
                 <img src="svgs/triangle.svg" />
             </button>
-            <div id="data">
+            <div id="data" v-show="!dataHidden">
                 <div v-for="(item, index) in data" :class="{ selected:(ptr == index) }">{{item}}</div>
             </div>
-            <div id="dataHiddenReminder" hidden>DATA AREA HIDDEN</div>
+            <div id="dataHiddenReminder" v-show="dataHidden">DATA AREA HIDDEN</div>
         </div>
         <div id="wrapText">
             <div id="box">

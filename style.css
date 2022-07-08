@@ -93,11 +93,9 @@ html, body {
     border-color:var(--deep-purple);
     border-width:3px;
 }
-
 img[src="svgs/stop.svg"] {
     transform:translate(0px, 2px);
 }
-
 img[src="svgs/lightning.svg"] {
     transform:translate(2px, 2px);
 }
@@ -108,10 +106,12 @@ img[src="svgs/lightning.svg"] {
     margin-right:10px;
     margin-top:10px;
     padding:2px;
-    transform:rotate(90deg);
     background-color:#fff;
     border-width:0px;
     border-radius:0px;
+}
+.toRotate {
+    transform: rotate(90deg);
 }
 
 span {
