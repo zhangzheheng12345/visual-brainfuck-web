@@ -7,59 +7,11 @@
     <title>visual-brainfuck-web -- Debug BF easily online</title>
     <link href="https://fonts.cdnfonts.com/css/thegoodmonolith" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/sf-mono?styles=36552" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="color.css" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
-    <div id="topBar">
-        <div id="bfLogo">+,>[</div>
-        <button id="menuButton" @click="toggleMenu()">
-            <img src="svgs/menu.svg" type="image/svg+xml" />
-        </button>
-        <div id="menu" v-show="!menuHidden">
-            <div><a href="https://github.com/zhangzheheng12345/visual-brainfuck-web">GitHub Repo</a></div>
-            <div><a href="https://github.com/zhangzheheng12345">My Profile</a></div>
-            <div><a href="https://esolangs.org/wiki/brainfuck">Brainfuck Wiki</a></div>
-        </div>
-    </div>
-    <div id="mainBox">
-        <button id="run" class="tool-button" title="run the program" v-show="!toRun" @click="runCode()">
-            <img src="svgs/play.svg" type="image/svg+xml" /></button>
-        <button id="stop" class="tool-button" title="stop the program" v-show="toRun" @click="toRun = false; textareaReadonly = false">
-            <img src="svgs/stop.svg" type="image/svg+xml" /></button>
-        <button id="minify" class="tool-button" title="minify the codes" v-show="!minified" @click="minifyButton()">
-            <img src="svgs/lightning.svg" type="image/svg+xml" /></button>
-        <button id="revert" class="tool-button" title="revert the codes" v-show="minified" @click="revert()">
-            <img src="svgs/revert.svg" type="image/svg+xml" /></button>
-        <input id="speed" type="range" min="0" max="300" v-model="speed" step="2" title="change the speed" />
-        <br />
-        <div id="wrapData">
-            <button id="showData" :class="{ toRotate:!dataHidden }" @click="toggleData()">
-                <img src="svgs/triangle.svg" />
-            </button>
-            <div id="data" v-show="!dataHidden">
-                <div v-for="(item, index) in data" :class="{ selected:(ptr == index) }">{{item}}</div>
-            </div>
-            <div id="dataHiddenReminder" v-show="dataHidden">DATA AREA HIDDEN</div>
-        </div>
-        <div id="wrapText">
-            <div id="box">
-                <input id="io" title="input & output" v-model="io"/>
-                <button id="clearCode" @click="clearCode()">
-                    <img src="svgs/trash.svg" type="image/svg+xml" />
-                </button>
-            </div>
-            <textarea id="text" :value="codes" @input="codes = $event.target.value; saveCode()"
-                :readonly="textareaReadonly"></textarea>
-        </div>
-        <br /><br /><br />
-        <p> Licensed under GPL 2.0</p>
-    </div>
-    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://unpkg.com/vue@next"></script>
-    <script src="run.js"></script>
-    <script src="main.js"></script>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
 </body>
 
 </html>

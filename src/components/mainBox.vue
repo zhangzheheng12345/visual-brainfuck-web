@@ -1,3 +1,24 @@
+<template>
+    <div id="mainBox">
+        <tool-buttons :toRun="toRun" :minified="minified" @run="runCode()" @stop="stop()" @minify="minifyButton()" @revert="revert()"
+            v-model:inSpeed="speed"></tool-buttons>
+        <data-area :data="data" :ptr="ptr" :dataHidden="dataHidden" @toggleData="toggleData()"></data-area>
+        <edit-text :textareaReadonly="textareaReadonly" @clear="clearCode()" :inCodes="codes"
+            @update:inCodes="codes = $event; saveCode()" v-model:inIO="io"></edit-text>
+    </div>
+</template>
+
+<style scoped>
+#mainBox {
+    padding: 5%;
+}
+</style>
+
+<script>
+import toolButtons from "./toolButtons.vue"
+import dataArea from "./dataArea.vue"
+import textEditor from "./textEditor.vue";
+
 function minify(origin) {
     let commentRemoved = ""
     // Avoid +-,.><[] in comment not being minified
@@ -9,24 +30,14 @@ function minify(origin) {
     }
     return commentRemoved.match(/[\+\-><\[\],\.]+/g).join("")
 }
-
 const bfFileName = "zhangzheheng12345-visual-bf-web-code"
 
-const menu = Vue.createApp({
-    data() {
-        return {
-            menuHidden: true
-        }
+export default {
+    components: {
+        "tool-buttons": toolButtons,
+        "data-area": dataArea,
+        "edit-text": textEditor
     },
-    methods: {
-        toggleMenu() {
-            this.menuHidden = !this.menuHidden
-        }
-    }
-})
-menu.mount("#topBar")
-
-const app = Vue.createApp({
     data() {
         return {
             data: [0],
@@ -63,6 +74,7 @@ const app = Vue.createApp({
 +++.----- -.----- ---.
 >>+.
 >++.`, // Defaultcode in textarea
+            codeBeforeMinified: "",
             textareaReadonly: false,
             dataHidden: false
         }
@@ -158,20 +170,23 @@ const app = Vue.createApp({
                     toggle()
                 }
             }
-            if (!window.dataShown) {
+            if (ctx.dataHidden) {
                 // If the data area is hidden, immediately run the program
                 immRun()
             } else {
                 setTimeout(function () { iterLoop() }, 50)
             }
         },
+        stop() {
+            this.toRun = false; this.textareaReadonly = false
+        },
         minifyButton() {
-            window.codeBeforeMinified = this.codes
+            this.codeBeforeMinified = this.codes
             this.codes = minify(this.codes)
             this.minified = true
         },
         revert() {
-            this.codes = window.codeBeforeMinified
+            this.codes = this.codeBeforeMinified
             this.minified = false
         },
         saveCode() {
@@ -186,5 +201,5 @@ const app = Vue.createApp({
             this.dataHidden = !this.dataHidden
         }
     }
-})
-app.mount("#mainBox")
+}
+</script>

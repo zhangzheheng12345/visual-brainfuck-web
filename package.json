@@ -5,6 +5,12 @@
         "build": "vite build"
     },
     "dependencies": {
-        "vite": "^2.9.12"
+        "@vitejs/plugin-vue": "^2.3.3",
+        "animate.css": "^4.1.1",
+        "vite": "^2.9.12",
+        "vue": "^3.2.36"
+    },
+    "devDependencies": {
+        "@vue/compiler-sfc": "^3.2.37"
     }
 }
