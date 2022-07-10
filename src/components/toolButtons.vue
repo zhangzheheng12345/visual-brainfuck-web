@@ -59,11 +59,11 @@ export default {
 }
 
 img[src="./svgs/stop.svg"] {
-    transform: translate(0px, 2px);
+    transform: translate(1px, 5px);
 }
 
 img[src="./svgs/lightning.svg"] {
-    transform: translate(2px, 2px);
+    transform: translate(3px, 6px);
 }
 
 #speed {

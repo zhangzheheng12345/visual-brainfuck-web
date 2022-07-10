@@ -8,7 +8,6 @@
 import topBar from "./components/topBar.vue"
 import mainBox from "./components/mainBox.vue"
 import tail from "./components/tail.vue"
-// import "animate.css/animate.min.css"
 
 export default {
     components: {

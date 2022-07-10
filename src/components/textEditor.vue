@@ -41,7 +41,7 @@ export default {
     float: right;
     margin: 5px;
     padding: 4px;
-    background-color: var(--grey);
+    background-color: var(--dark-grey);
     border-width: 0px;
     border-radius: 10px;
     width: 40px;
