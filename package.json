@@ -2,7 +2,8 @@
     "name": "visual-brainfuck-web",
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "preview":"vite preview"
     },
     "dependencies": {
         "@vitejs/plugin-vue": "^2.3.3",
