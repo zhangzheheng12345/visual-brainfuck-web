@@ -1,7 +1,9 @@
 <template>
     <div id="wrapText">
         <div id="box">
-            <input id="io" title="input & output" v-model="io" />
+            <span id="IOlabel" @click="toggleIOlabel">{{ IorO ? "IN" : "OUT" }}</span>
+            <input id="in" title="input" v-model="_in" v-show="IorO" />
+            <input id="out" title="out" v-model="out" v-show="!IorO"  readonly/>
             <button id="clearCode" @click="$emit('clear')">
                 <img src="./svgs/trash.svg" type="image/svg+xml" />
             </button>
@@ -12,22 +14,49 @@
 
 <script>
 export default {
-    props: ["textareaReadonly", "inIO", "inCodes"],
-    emits: ["clear", "update:inIO", "update:inCodes"],
+    props: ["textareaReadonly", "inIn", "inOut", "inCodes", "inIorO"],
+    emits: ["clear", "update:inIn", "update:inOut", "update:inCodes", "update:inIorO"],
     computed: {
-        io: {
-            get() { return this.inIO },
-            set(value) { this.$emit("update:inIO", value) }
+        _in: { // in is a key word in Vue
+            get() { return this.inIn },
+            set(value) { this.$emit("update:inIn", value) }
+        },
+        out: {
+            get() { return this.inOut },
+            set(value) { this.$emit("update:inOut", value) }
         },
         codes: {
             get() { return this.inCodes },
             set(value) { this.$emit("update:inCodes", value) }
+        },
+        IorO: {
+            get() { return this.inIorO },
+            set(value) { this.$emit("update:inIorO", value) }
+        }
+    },
+    methods: {
+        toggleIOlabel() {
+            this.IorO = !this.IorO
         }
     }
 }
 </script>
 
 <style scoped>
+#IOlabel {
+    /* width: 25px; */
+    color: #fff;
+    background-color: var(--dark-grey);
+    float: left;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    height: 25px;
+    font-family: "TheGoodMonolith";
+    font-size: 21px;
+    cursor: default;
+}
+
 #wrapText {
     margin: 5px;
     margin-left: 1px;
@@ -66,7 +95,8 @@ export default {
 }
 
 #text:focus,
-#io:focus {
+#in:focus,
+#out:focus {
     outline: 0px;
 }
 
@@ -74,7 +104,8 @@ export default {
     margin: 5px;
 }
 
-#io {
+#in,
+#out {
     float: left;
     height: 25px;
     border-radius: 5px;

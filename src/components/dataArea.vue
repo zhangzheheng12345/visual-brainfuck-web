@@ -61,6 +61,7 @@ export default {
     color: #fff;
     font-size: 18px;
     font-family: sans-serif;
+    cursor: default;
 }
 
 #data>div.selected {

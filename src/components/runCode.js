@@ -8,21 +8,20 @@ export function runCode(ctx) {
     let cindex = 0
     let iindex = 0
     let stack = []
-    // Initializing data area
     ctx.textareaReadonly = true
     let code = minify(ctx.codes)
-    let input = ctx.io
-    ctx.io = ""
+    ctx.IorO = false
+    ctx.out = ""
     // tool functions
     function getInput() {
-        if (iindex < input.length)
-            ctx.data[ctx.ptr] = input[iindex].charCodeAt();
+        if (iindex < ctx.in.length)
+            ctx.data[ctx.ptr] = ctx.in[iindex].charCodeAt();
         else
             ctx.data[ctx.ptr] = 0;
         iindex += 1
     }
     function output() {
-        ctx.io += String.fromCharCode(ctx.data[ctx.ptr])
+        ctx.out += String.fromCharCode(ctx.data[ctx.ptr])
     }
     function toggle() {
         ctx.toRun = !ctx.toRun

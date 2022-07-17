@@ -1,10 +1,12 @@
 <template>
     <div id="mainBox">
-        <tool-buttons :toRun="context.toRun" :minified="context.minified" @run="runCode(context)" @stop="stop()" @minify="minifyButton()"
-            @revert="revert()" v-model:inSpeed="context.speed"></tool-buttons>
-        <data-area :data="context.data" :ptr="context.ptr" :dataHidden="context.dataHidden" @toggleData="toggleData()"></data-area>
+        <tool-buttons :toRun="context.toRun" :minified="context.minified" @run="runCode(context)" @stop="stop()"
+            @minify="minifyButton()" @revert="revert()" v-model:inSpeed="context.speed"></tool-buttons>
+        <data-area :data="context.data" :ptr="context.ptr" :dataHidden="context.dataHidden" @toggleData="toggleData()">
+        </data-area>
         <text-editor :textareaReadonly="context.textareaReadonly" @clear="clearCode()" :inCodes="context.codes"
-            @update:inCodes="context.codes = $event; saveCode()" v-model:inIO="context.io"></text-editor>
+            @update:inCodes="context.codes = $event; saveCode()" v-model:inIn="context.in" v-model:inOut="context.out"
+            v-model:inIorO="context.IorO"></text-editor>
     </div>
 </template>
 
@@ -27,14 +29,16 @@ const bfFileName = "zhangzheheng12345-visual-bf-web-code"
 const context = reactive({
     data: [0],
     ptr: 0,
-    speed: 100,
+    speed: 200,
     toRun: false,
     minified: false,
-    io: "",
+    in: "",
+    out: "",
     codes: defaultCodes,
     codeBeforeMinified: "",
     textareaReadonly: false,
-    dataHidden: false
+    dataHidden: false,
+    IorO: true
 })
 
 // Load saved codes 
