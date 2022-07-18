@@ -1,86 +1,85 @@
 import { minify } from "./minifyCode"
 
-export function runCode(ctx) {
+export function runCode(ctx, callback) {
     // Initailizing context
+    if (ctx.toRun === false) {
+        ctx.cindex = 0
+        ctx.iindex = 0
+        ctx.stack = []
+        ctx.data = [0]
+        ctx.ptr = 0
+    }
     ctx.toRun = true
-    ctx.data = [0]
-    ctx.ptr = 0
-    let cindex = 0
-    let iindex = 0
-    let stack = []
+    ctx.toPause = false
     ctx.textareaReadonly = true
     let code = minify(ctx.codes)
     ctx.IorO = false
     ctx.out = ""
     // tool functions
     function getInput() {
-        if (iindex < ctx.in.length)
-            ctx.data[ctx.ptr] = ctx.in[iindex].charCodeAt();
+        if (ctx.iindex < ctx.in.length)
+            ctx.data[ctx.ptr] = ctx.in[ctx.iindex].charCodeAt();
         else
             ctx.data[ctx.ptr] = 0;
-        iindex += 1
+        ctx.iindex += 1
     }
     function output() {
         ctx.out += String.fromCharCode(ctx.data[ctx.ptr])
     }
-    function toggle() {
-        ctx.toRun = !ctx.toRun
-        ctx.textareaReadonly = !ctx.textareaReadonly
-    }
     function runSingleCmd() {
-        if (code[cindex] == "+") {
+        if (code[ctx.cindex] == "+") {
             ctx.data[ctx.ptr] += 1
             if (ctx.data[ctx.ptr] > 255) ctx.data[ctx.ptr] = 0;
-        } else if (code[cindex] == "-") {
+        } else if (code[ctx.cindex] == "-") {
             ctx.data[ctx.ptr] -= 1
             if (ctx.data[ctx.ptr] < 0) ctx.data[ctx.ptr] = 255;
-        } else if (code[cindex] == ">") {
+        } else if (code[ctx.cindex] == ">") {
             ctx.ptr += 1
             if (ctx.ptr >= ctx.data.length) {
                 ctx.data.push(0)
             }
-        } else if (code[cindex] == "<") {
+        } else if (code[ctx.cindex] == "<") {
             if (ctx.ptr > 0) {
                 ctx.ptr -= 1
             }
-        } else if (code[cindex] == "[") {
+        } else if (code[ctx.cindex] == "[") {
             if (ctx.data[ctx.ptr])
-                stack.push(cindex);
+                ctx.stack.push(ctx.cindex);
             else {
-                cindex++
+                ctx.cindex++
                 let count = 1
-                for (; cindex < code.length && ctx.toRun && count; cindex++) {
-                    if (code[cindex] == '[') count++;
-                    else if (code[cindex] == ']') count--;
+                for (; ctx.cindex < code.length && ctx.toRun && count; ctx.cindex++) {
+                    if (code[ctx.cindex] == '[') count++;
+                    else if (code[ctx.cindex] == ']') count--;
                 }
             }
-        } else if (code[cindex] == "]") {
+        } else if (code[ctx.cindex] == "]") {
             if (ctx.data[ctx.ptr])
-                cindex = stack[stack.length - 1];
+                ctx.cindex = ctx.stack[ctx.stack.length - 1];
             else
-                stack.pop();
-        } else if (code[cindex] == ",") {
+                ctx.stack.pop();
+        } else if (code[ctx.cindex] == ",") {
             getInput()
-        } else if (code[cindex] == ".") {
+        } else if (code[ctx.cindex] == ".") {
             output()
         }
-        cindex++
+        ctx.cindex++
     }
     // Run without delay
     function immRun() {
-        while (cindex < code.length && ctx.toRun) {
+        while (ctx.cindex < code.length && ctx.toRun && !ctx.toPause) {
             runSingleCmd()
         }
-        toggle()
+        callback()
     }
     function iterLoop() {
-        if (cindex < code.length) {
+        if (ctx.cindex < code.length) {
             runSingleCmd()
-            if (ctx.toRun) {
+            if (ctx.toRun && !ctx.toPause) {
                 setTimeout(function () { iterLoop() }, 300 - ctx.speed)
             }
         } else {
-            toggle()
+            callback()
         }
     }
     if (ctx.dataHidden) {

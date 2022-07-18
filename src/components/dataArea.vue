@@ -51,15 +51,13 @@ export default {
 
 #data>div {
     background-color: #fff;
-    margin: 5px;
-    margin-left: 4px;
-    margin-right: 4px;
-    padding: 4px;
-    width: 50px;
+    margin: 4px;
+    padding: 3px;
+    width: 40px;
     border-radius: 5px;
     text-align: center;
     color: #000;
-    font-size: 18px;
+    font-size: 17px;
     font-family: sans-serif;
     font-weight: bold;
     cursor: default;

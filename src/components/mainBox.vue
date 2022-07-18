@@ -1,7 +1,8 @@
 <template>
     <div id="mainBox">
-        <tool-buttons :toRun="context.toRun" :minified="context.minified" @run="runCode(context)" @stop="stop()"
-            @minify="minifyButton()" @revert="revert()" v-model:inSpeed="context.speed"></tool-buttons>
+        <tool-buttons :toRun="context.toRun" :toPause="context.toPause" :minified="context.minified"
+            @run="runCode(context, callbackAfterRun)" @pause="pause()" @stop="stop()" @minify="minifyButton()"
+            @revert="revert()" v-model:inSpeed="context.speed"></tool-buttons>
         <data-area :data="context.data" :ptr="context.ptr" :dataHidden="context.dataHidden" @toggleData="toggleData()">
         </data-area>
         <text-editor :textareaReadonly="context.textareaReadonly" @clear="clearCode()" :inCodes="context.codes"
@@ -14,7 +15,7 @@
 #mainBox {
     padding: 10px;
     background-color: var(--very-dark-grey);
-    margin: 16px;
+    margin: 20px;
     border-radius: 10px;
 }
 </style>
@@ -34,6 +35,7 @@ const context = reactive({
     ptr: 0,
     speed: 200,
     toRun: false,
+    toPause: false,
     minified: false,
     in: "",
     out: "",
@@ -41,7 +43,10 @@ const context = reactive({
     codeBeforeMinified: "",
     textareaReadonly: false,
     dataHidden: false,
-    IorO: true
+    IorO: true,
+    stack: [],
+    cindex: 0,
+    iindex: 0
 })
 
 // Load saved codes 
@@ -50,6 +55,16 @@ onMounted(() => {
         context.codes = window.localStorage.getItem(bfFileName);
 })
 
+function callbackAfterRun() {
+    if (!context.toRun) context.toPause = false;
+    else {
+        context.toRun = false
+        context.textareaReadonly = !context.textareaReadonly
+    }
+}
+function pause() {
+    context.toPause = true; context.textareaReadonly = false
+}
 function stop() {
     context.toRun = false; context.textareaReadonly = false
 }

@@ -1,6 +1,8 @@
 <template>
-    <button id="run" class="tool-button" title="run the program" v-show="!toRun" @click="$emit('run')">
+    <button id="run" class="tool-button" title="run the program" v-show="toPause || !toRun" @click="$emit('run')">
         <img src="./svgs/play.svg" type="image/svg+xml" /></button>
+    <button id="pause" class="tool-button" title="pause the program" v-show="toRun && !toPause" @click="$emit('pause')">
+        <img src="./svgs/pause.svg" type="image/svg+xml" /></button>
     <button id="stop" class="tool-button" title="stop the program" v-show="toRun" @click="$emit('stop')">
         <img src="./svgs/stop.svg" type="image/svg+xml" /></button>
     <button id="minify" class="tool-button" title="minify the codes" v-show="!minified" @click="$emit('minify')">
@@ -12,8 +14,8 @@
 
 <script>
 export default {
-    props: ["toRun", "minified", "inSpeed"],
-    emits: ["run", "stop", "minify", "revert", "update:inSpeed"],
+    props: ["toRun", "toPause", "minified", "inSpeed"],
+    emits: ["run", "pause", "stop", "minify", "revert", "update:inSpeed"],
     computed: {
         speed: {
             get() { return this.inSpeed },
@@ -40,6 +42,7 @@ export default {
 }
 
 #run,
+#pause,
 #stop {
     background-color: var(--green);
     border-color: var(--deep-green);

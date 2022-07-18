@@ -76,12 +76,12 @@ export default {
     top: 55px;
     border-radius: 8px;
     padding: 5px;
-    background-color: var(--very-dark-grey);
+    background-color: var(--grey);
     z-index: 99;
 }
 
 #menu>div {
-    background-color: var(--dark-grey);
+    background-color: var(--very-dark-grey);
     border-radius: 5px;
     margin: 8px;
     padding: 5px;
@@ -93,5 +93,9 @@ export default {
     font-family: "SF Mono", Courier, Menlo, Consolas, monospace;
     text-decoration: none;
     padding: 5px;
+}
+
+#menu>div:hover {
+    transform: scale(1.1, 1.0);
 }
 </style>

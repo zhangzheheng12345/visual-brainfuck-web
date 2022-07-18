@@ -40,7 +40,7 @@ The input widget (white) enables you to type your inputs ( `,` command in Brainf
 
 ### More
 
-The trash bin button enables you to clear the Brainf\*ck code in the text area in a quicker way. Besides, it will remove the storage which memorizes your code. Click it, and all the long weird codes will disappear at once. 
+The trash bin button enables you to clear the Brainf\*ck code in the text area in a quicker way. Besides, it will remove the storage which memorizes your code. Click it, and all the long weird codes will disappear at once.
 
 `#` declares a comment which continues to the end of the line. This feature is not included in standard Brainf\*ck.
 
@@ -56,6 +56,6 @@ In the future, code minifying, step-by-step debugging may be supported.
 
 This project is GPL 2.0 licensed and it used to be MIT licensed.
 
-Thanks for [Iconduck](https://iconduck.com) providing such excellent icons. The run icon, stop icon, and the trash bin icon are all downloaded from Iconduck. They're all MIT licensed.
+Thanks for [Iconduck](https://iconduck.com) providing such excellent icons. The menu icon, run icon, pause icon, stop icon, and the trash bin icon are all downloaded from Iconduck. They're all MIT licensed.
 
 Thanks for [CDNFonts](https://www.cdnfonts.com) providing great English fonts.
