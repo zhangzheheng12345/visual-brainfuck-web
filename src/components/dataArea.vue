@@ -1,6 +1,6 @@
 <template>
     <div id="wrapData">
-        <button id="showData" :class="{ toRotate: !dataHidden }" @click="$emit('toggleData')">
+        <button id="showData" :class="{ toRotate: !dataHidden }" @click="$emit('toggleData')" :title="dataHidden?'show the data area' : 'hide the data area'">
             <img src="./svgs/triangle.svg" />
         </button>
         <div id="data" v-show="!dataHidden">
@@ -23,7 +23,7 @@ export default {
     margin-right: 10px;
     margin-top: 10px;
     padding: 2px;
-    background-color: #fff;
+    background-color: var(--very-dark-grey);
     border-width: 0px;
     border-radius: 0px;
 }
@@ -40,8 +40,8 @@ export default {
 }
 
 #data {
-    background-color: var(--light-grey);
-    padding: 3px;
+    background-color: var(--extremely-dark-grey);
+    padding: 6px;
     margin-left: 5px;
     border-radius: 5px;
     display: flex;
@@ -50,29 +50,33 @@ export default {
 }
 
 #data>div {
-    background-color: var(--grey);
-    margin: 2px;
+    background-color: #fff;
+    margin: 5px;
     margin-left: 4px;
     margin-right: 4px;
     padding: 4px;
     width: 50px;
     border-radius: 5px;
     text-align: center;
-    color: #fff;
+    color: #000;
     font-size: 18px;
     font-family: sans-serif;
+    font-weight: bold;
     cursor: default;
 }
 
 #data>div.selected {
-    background-color: var(--very-dark-grey);
-    transform: scale(1.05, 1.1);
+    background-color: #fff;
+    transform: scale(1.1, 1.2);
 }
 
 #dataHiddenReminder {
     padding: 11px;
     font-size: 18px;
-    color: var(--grey);
+    color: #fff;
     font-family: Courier, Menlo, Consolas, monospace;
+    background-color: var(--dark-grey);
+    border-radius: 10px;
+    cursor: default;
 }
 </style>

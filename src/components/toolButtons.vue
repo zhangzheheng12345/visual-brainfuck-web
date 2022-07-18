@@ -25,45 +25,44 @@ export default {
 
 <style scoped>
 .tool-button {
-    height: 45px;
-    width: 70px;
+    height: 40px;
+    width: 45px;
     margin: 5px;
-    margin-left: 7px;
-    margin-right: 7px;
+    /* margin-left: 7px;
+    margin-right: 7px; */
     border-width: 0px;
     border-radius: 10px;
-    box-shadow: 0px 3px 4px var(--light-grey);
+    border-style: solid;
 }
 
-#run {
+.tool-button:hover {
+    transform: scale(1.1, 1.1);
+}
+
+#run,
+#stop {
     background-color: var(--green);
     border-color: var(--deep-green);
     border-width: 3px;
 }
 
-#stop,
-#revert {
-    border-color: var(--dark-grey);
-    border-width: 3px;
-    background-color: #fff;
+#stop>* {
+    transform: translate(0px, 2px);
+}
+
+#minify>* {
+    transform: translate(2px, 2px);
 }
 
 #revert>* {
-    transform: scale(1.3, 1.5);
+    transform: scale(1.2, 1.4) translate(0px, 1px);
 }
 
-#minify {
+#minify,
+#revert {
     background-color: var(--purple);
     border-color: var(--deep-purple);
     border-width: 3px;
-}
-
-img[src="./svgs/stop.svg"] {
-    transform: translate(1px, 5px);
-}
-
-img[src="./svgs/lightning.svg"] {
-    transform: translate(3px, 6px);
 }
 
 #speed {

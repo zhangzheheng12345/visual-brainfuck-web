@@ -32,7 +32,6 @@ export default {
     width: 100%;
     height: 40px;
     background-color: var(--very-dark-grey);
-    box-shadow: 0px 3px 4px var(--light-grey);
     padding: 3px;
 }
 
@@ -50,6 +49,7 @@ export default {
     font-family: "TheGoodMonolith", Courier, Menlo, Consolas, monospace;
     font-weight: bolder;
     letter-spacing: 3px;
+    cursor: default;
 }
 
 #menuButton {
@@ -60,6 +60,10 @@ export default {
     top: 2px;
     right: 5px;
     z-index: 99;
+}
+
+#menuButton:hover {
+    transform: scale(1.1, 1.1);
 }
 
 #menuButton>* {

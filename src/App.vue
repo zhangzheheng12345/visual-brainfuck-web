@@ -23,6 +23,7 @@ export default {
 * {
     padding: 0px;
     margin: 0px;
+    -webkit-font-smoothing: antialiased;
 }
 
 :root {
@@ -34,5 +35,7 @@ export default {
     --grey: #888;
     --dark-grey: #4e4e4e;
     --very-dark-grey: #333;
+    --extremely-dark-grey: #252525;
+    background-color: var(--extremely-dark-grey);
 }
 </style>

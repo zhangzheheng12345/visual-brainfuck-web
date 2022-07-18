@@ -1,10 +1,12 @@
 <template>
     <div id="wrapText">
         <div id="box">
-            <span id="IOlabel" @click="toggleIOlabel">{{ IorO ? "IN" : "OUT" }}</span>
+            <span id="IOlabel" @click="toggleIOlabel" :title="IorO ? 'toggle to ouput' : 'toggle to input'">{{ IorO ?
+                    "IN" : "OUT"
+            }}</span>
             <input id="in" title="input" v-model="_in" v-show="IorO" />
-            <input id="out" title="out" v-model="out" v-show="!IorO"  readonly/>
-            <button id="clearCode" @click="$emit('clear')">
+            <input id="out" title="out" v-model="out" v-show="!IorO" readonly />
+            <button id="clearCode" @click="$emit('clear')" title="clear the codes">
                 <img src="./svgs/trash.svg" type="image/svg+xml" />
             </button>
         </div>
@@ -57,8 +59,11 @@ export default {
     cursor: default;
 }
 
+#IOlabel:hover {
+    transform: scale(1.1, 1.1);
+}
+
 #wrapText {
-    margin: 5px;
     margin-left: 1px;
     padding: 2px;
     border-radius: 5px;
@@ -78,8 +83,11 @@ export default {
     color: #fff;
 }
 
+#clearCode:hover {
+    transform: scale(1.1, 1.1);
+}
+
 #text {
-    padding: 20px;
     height: 450px;
     width: 100%;
     border-color: var(--very-dark-grey);
@@ -101,7 +109,7 @@ export default {
 }
 
 #box {
-    margin: 5px;
+    margin: 2px;
 }
 
 #in,

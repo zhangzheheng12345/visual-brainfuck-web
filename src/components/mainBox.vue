@@ -12,7 +12,10 @@
 
 <style scoped>
 #mainBox {
-    padding: 5%;
+    padding: 10px;
+    background-color: var(--very-dark-grey);
+    margin: 16px;
+    border-radius: 10px;
 }
 </style>
 
