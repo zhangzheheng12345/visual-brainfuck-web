@@ -27,15 +27,31 @@ export default {
 }
 
 :root {
-    --green: #0aaf09;
-    --deep-green: #0a801f;
-    --purple: #7947c2;
-    --deep-purple: #5a3796;
-    --light-grey: #ddd;
-    --grey: #888;
-    --dark-grey: #4e4e4e;
-    --very-dark-grey: #333;
-    --extremely-dark-grey: #252525;
+    --green: #0aca0a;
+    --deep-green: #0f8325;
+    --purple: #8a47ee;
+    --deep-purple: #672cce;
+    --azure: rgb(11, 131, 243);
+    --light-grey: #ccc;
+    --grey: #999;
+    --dark-grey: #555;
+    --very-dark-grey: #2c2c2c;
+    --extremely-dark-grey: #1c1c1c;
     background-color: var(--extremely-dark-grey);
+}
+
+/* scrollbar style */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: var(--extremely-dark-grey);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: var(--light-grey);
 }
 </style>

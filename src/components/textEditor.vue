@@ -1,6 +1,5 @@
 <template>
     <div id="wrapText">
-        <div id="box">
             <span id="IOlabel" @click="toggleIOlabel" :title="IorO ? 'toggle to ouput' : 'toggle to input'">{{ IorO ?
                     "IN" : "OUT"
             }}</span>
@@ -9,7 +8,6 @@
             <button id="clearCode" @click="$emit('clear')" title="clear the codes">
                 <img src="./svgs/trash.svg" type="image/svg+xml" />
             </button>
-        </div>
         <textarea id="text" v-model="codes" :readonly="textareaReadonly"></textarea>
     </div>
 </template>
@@ -90,6 +88,7 @@ export default {
 #text {
     height: 450px;
     width: 100%;
+    margin:5px;
     border-color: var(--very-dark-grey);
     border-radius: 0px;
     background-color: var(--very-dark-grey);
@@ -106,10 +105,6 @@ export default {
 #in:focus,
 #out:focus {
     outline: 0px;
-}
-
-#box {
-    margin: 2px;
 }
 
 #in,

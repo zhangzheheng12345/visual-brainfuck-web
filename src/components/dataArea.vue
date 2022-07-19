@@ -40,10 +40,13 @@ export default {
 }
 
 #data {
-    background-color: var(--extremely-dark-grey);
-    padding: 6px;
+    min-height: 38px;
+    background-color: var(--grey);
+    padding: 5px;
     margin-left: 5px;
-    border-radius: 5px;
+    border-radius: 7px;
+    border-width: 1px;
+    border-color: #fff;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -64,17 +67,17 @@ export default {
 }
 
 #data>div.selected {
-    background-color: #fff;
     transform: scale(1.1, 1.2);
 }
 
 #dataHiddenReminder {
-    padding: 11px;
-    font-size: 18px;
+    padding: 10px;
+    height: 38px;
+    font-size: 20px;
     color: #fff;
-    font-family: Courier, Menlo, Consolas, monospace;
+    font-family: "TheGoodMonolith", Courier, Menlo, Consolas, monospace;
     background-color: var(--dark-grey);
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: default;
 }
 </style>
