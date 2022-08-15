@@ -33,6 +33,9 @@ export default {
     height: 40px;
     background-color: var(--very-dark-grey);
     padding: 3px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
 }
 
 #bfLogo {
@@ -43,7 +46,7 @@ export default {
     padding-bottom: 3px;
     font-size: 22px;
     border-radius: 15px;
-    position: absolute;
+    position: fixed;
     left: 10px;
     top: 9px;
     font-family: "TheGoodMonolith", Courier, Menlo, Consolas, monospace;

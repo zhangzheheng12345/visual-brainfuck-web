@@ -2,7 +2,7 @@
 
 ![Website Image](imgs/website.jpeg)
 
-A Brainf\*ck interpreter online. Visit [visual-brainfuck-web Github Page](https://zhangzheheng12345.github.io/visual-brainfuck-web) to have a try.
+A Brainf\*ck interpreter online. Visit [visual-brainfuck-web Github Page](https://visual-brainfuck-web.vercel.app) to have a try.
 
 If you don't have any idea about what Brainf\*ck exactly is, visit [Brainf\*ck Wiki](https://esolangs.org/wiki/brainfuck).
 
@@ -12,11 +12,11 @@ The website use Vue.
 
 ### To run & stop
 
-The green triangle button runs the Brainf\*ck code in the large text area. The grey square button immediately stops the running program.
+The green triangle button runs the Brainf\*ck code in the large text area. The green square button immediately stops the running program. The green button with two lines stops the running program.
 
 ### Minify your code
 
-Click the purple button with a lightning in the middle. It will remove comments, spaces, tabs and line breaks in your code.
+Click the purple button with a lightning in the center. It will remove comments, spaces, tabs and line breaks in your code.
 
 If you want to revert it back, just click it again.
 
