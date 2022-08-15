@@ -30,8 +30,6 @@ export default {
     height: 40px;
     width: 45px;
     margin: 5px;
-    /* margin-left: 7px;
-    margin-right: 7px; */
     border-width: 0px;
     border-radius: 10px;
     border-style: solid;

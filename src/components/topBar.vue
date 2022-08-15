@@ -1,4 +1,5 @@
 <template>
+    <div id="topBarReplacer"></div>
     <div id="topBar">
         <div id="bfLogo">+,>[</div>
         <button id="menuButton" @click="toggleMenu()">
@@ -28,6 +29,12 @@ export default {
 </script>
 
 <style scoped>
+#topBarReplacer {
+    width: 100%;
+    height: 40px;
+    background-color: var(--extremely-dark-grey);
+}
+
 #topBar {
     width: 100%;
     height: 40px;
@@ -36,6 +43,7 @@ export default {
     position: fixed;
     right: 0px;
     top: 0px;
+    z-index:99;
 }
 
 #bfLogo {
