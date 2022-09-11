@@ -1,6 +1,6 @@
 # visual-brainfuck-web
 
-![Website Image](imgs/website.jpeg)
+![Website Image](https://s1.ax1x.com/2022/09/11/vO6sHJ.jpg)]
 
 A Brainf\*ck interpreter online. Visit [visual-brainfuck-web Github Page](https://visual-brainfuck-web.vercel.app) to have a try.
 
