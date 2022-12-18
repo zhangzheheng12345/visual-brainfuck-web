@@ -1,13 +1,11 @@
 <template>
     <top-bar></top-bar>
     <main-box></main-box>
-    <tail></tail>
 </template>
 
 <script>
 import topBar from "./components/topBar.vue"
 import mainBox from "./components/mainBox/mainBox.vue"
-import tail from "./components/tail.vue"
 
 export default {
     components: {
