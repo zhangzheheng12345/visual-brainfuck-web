@@ -11,7 +11,6 @@ export default {
     components: {
         "top-bar": topBar,
         "main-box": mainBox,
-        "tail": tail
     }
 }
 </script>
