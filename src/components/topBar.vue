@@ -47,7 +47,7 @@ export default {
 }
 
 #bfLogo {
-    transform-origin: 20px -12px;
+    transform-origin: 20px -5px;
     transform: scale(0.05, 0.045);
 }
 
