@@ -71,8 +71,8 @@ export default {
 }
 
 #dataHiddenReminder {
-    padding: 10px;
-    margin:9px;
+    padding: 5px;
+    margin: 9px;
     font-size: 20px;
     color: #fff;
     font-family: "TheGoodMonolith", Courier, Menlo, Consolas, monospace;
