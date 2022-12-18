@@ -47,8 +47,8 @@ export default {
 }
 
 #bfLogo {
-    transform-origin: top left;
-    transform: scale(0.05, 0.05);
+    transform-origin: 10px 0px;
+    transform: scale(0.05, 0.045);
 }
 
 #menuButton {
