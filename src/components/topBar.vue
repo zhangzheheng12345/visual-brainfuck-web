@@ -1,7 +1,7 @@
 <template>
     <div id="topBarReplacer"></div>
     <div id="topBar">
-        <div id="bfLogo">+,>[</div>
+        <img id="bfLogo" src="./svgs/v-bf-web-logo.svg" type="image/svg+xml" />
         <button id="menuButton" @click="toggleMenu()">
             <img src="./svgs/menu.svg" type="image/svg+xml" />
         </button>
@@ -47,20 +47,7 @@ export default {
 }
 
 #bfLogo {
-    color: var(--very-dark-grey);
-    background-color: #fff;
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-bottom: 3px;
-    font-size: 22px;
-    border-radius: 15px;
-    position: fixed;
-    left: 10px;
-    top: 9px;
-    font-family: "TheGoodMonolith", Courier, Menlo, Consolas, monospace;
-    font-weight: bolder;
-    letter-spacing: 3px;
-    cursor: default;
+    transform:scale(0.05, 0.05);
 }
 
 #menuButton {
