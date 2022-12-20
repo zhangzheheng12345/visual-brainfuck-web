@@ -2,25 +2,16 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 400 400" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs/>
-<g id="图层-2" visibility="hidden">
-<path d="M0 0L400 0L400 400L0 400L0 0Z" fill="#2a2a2a" fill-rule="nonzero" opacity="1" stroke="none"/>
-</g>
-<g id="图层-1">
-<path d="M105 182.467L200.404 182.467L200.404 213.509L105 213.509L105 182.467Z" fill="#a3a3a3" fill-rule="nonzero" opacity="1" stroke="none"/>
-<path d="M78.504 345.012L44.2156 345.012L44.2156 52.0412L78.504 52.0412L78.504 345.012Z" fill="#a3a3a3" fill-rule="nonzero" opacity="0.985766" stroke="none"/>
-<path d="M131.598 116.499L163.698 116.499L163.698 277.477L131.598 277.477L131.598 116.499Z" fill="#a3a3a3" fill-rule="nonzero" opacity="1" stroke="none"/>
 <g opacity="1">
 <path d="M251.26 52.0412L361.254 52.0412L361.254 345.012L251.26 345.012L251.26 52.0412Z" fill="#ffffff" fill-rule="nonzero" opacity="1" stroke="none"/>
 <path d="M193.113 50.9646L361.254 50.9646L361.254 62.8716L193.113 62.8716L193.113 50.9646Z" fill="#ffffff" fill-rule="nonzero" opacity="1" stroke="none"/>
 <path d="M193.113 333.105L361.254 333.105L361.254 345.012L193.113 345.012L193.113 333.105Z" fill="#ffffff" fill-rule="nonzero" opacity="1" stroke="none"/>
 </g>
 <g opacity="1">
-<path d="M69.9183 345.012L44.2156 345.012L44.2156 52.0412L69.9183 52.0412L69.9183 345.012Z" fill="#ffffff" fill-rule="nonzero" opacity="1" stroke="none"/>
-<path d="M103.142 62.8716L44.2156 62.8716L44.2156 50.9646L103.142 50.9646L103.142 62.8716Z" fill="#ffffff" fill-rule="nonzero" opacity="1" stroke="none"/>
-<path d="M103.142 345.012L44.2156 345.012L44.2156 333.105L103.142 333.105L103.142 345.012Z" fill="#ffffff" fill-rule="nonzero" opacity="1" stroke="none"/>
+<path d="M79.6743 345.012L44.2156 345.012L44.2156 52.0412L79.6743 52.0412L79.6743 345.012Z" fill="#ffffff" fill-rule="nonzero" opacity="1" stroke="none"/>
+<path d="M108.587 62.8716L44.2156 62.8716L44.2156 50.9646L108.587 50.9646L108.587 62.8716Z" fill="#ffffff" fill-rule="nonzero" opacity="1" stroke="none"/>
+<path d="M108.587 345.012L44.2156 345.012L44.2156 333.105L108.587 333.105L108.587 345.012Z" fill="#ffffff" fill-rule="nonzero" opacity="1" stroke="none"/>
 </g>
-<path d="M105 182.467L184.722 182.467L184.722 213.509L105 213.509L105 182.467Z" fill="#ffffff" fill-rule="nonzero" opacity="1" stroke="none"/>
-<path d="M131.598 116.499L148.702 116.499L148.702 277.477L131.598 277.477L131.598 116.499Z" fill="#ffffff" fill-rule="nonzero" opacity="1" stroke="none"/>
-<path d="M308.822 50.9911L361.254 50.9911L361.254 345.012L308.822 345.012L308.822 50.9911Z" fill="#a3a3a3" fill-rule="nonzero" opacity="1" stroke="none"/>
-</g>
+<path d="M99.4021 179.172L224.437 179.172L224.437 218.177L99.4021 218.177L99.4021 179.172Z" fill="#ffffff" fill-rule="nonzero" opacity="1" stroke="none"/>
+<path d="M133.553 127.116L175.869 127.116L175.869 268.86L133.553 268.86L133.553 127.116Z" fill="#ffffff" fill-rule="nonzero" opacity="1" stroke="none"/>
 </svg>
