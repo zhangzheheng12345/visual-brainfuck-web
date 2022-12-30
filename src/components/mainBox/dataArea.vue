@@ -75,7 +75,7 @@ export default {
     margin: 3px;
     font-size: 20px;
     color: #fff;
-    font-family: "TheGoodMonolith", Courier, Menlo, Consolas, monospace;
+    font-family: "Ubuntu Mono", Courier, Menlo, Consolas, monospace;
     background-color: var(--dark-grey);
     border-radius: 5px;
     cursor: default;

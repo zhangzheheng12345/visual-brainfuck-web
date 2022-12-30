@@ -52,7 +52,7 @@ export default {
     margin: 5px;
     padding: 5px;
     height: 25px;
-    font-family: "TheGoodMonolith";
+    font-family: "Ubuntu Mono";
     font-size: 21px;
     cursor: default;
 }
@@ -94,7 +94,7 @@ export default {
     background-color: var(--very-dark-grey);
     color: #fff;
     font-size: 16px;
-    font-family: "SF Mono", Courier, Menlo, Consolas, monospace;
+    font-family: "League Mono", Courier, Menlo, Consolas, monospace;
     box-sizing: border-box;
     resize: none;
     overflow: auto;
@@ -120,6 +120,6 @@ export default {
     width: 75%;
     color: var(--very-dark-grey);
     font-size: 18px;
-    font-family: "SF Mono", Courier, Menlo, Consolas, monospace;
+    font-family: "League Mono", Courier, Menlo, Consolas, monospace;
 }
 </style>

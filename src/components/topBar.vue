@@ -89,7 +89,7 @@ export default {
 #menu>div>a {
     color: #fff;
     font-size: 17px;
-    font-family: "SF Mono", Courier, Menlo, Consolas, monospace;
+    font-family: "League Mono", Courier, Menlo, Consolas, monospace;
     text-decoration: none;
     padding: 5px;
 }
