@@ -80,7 +80,7 @@ export default {
 #dataHiddenReminder {
   padding: 10px;
   margin: 3px;
-  font-size: 20px;
+  font-size: 18px;
   color: #fff;
   font-family: "Ubuntu", Courier, Menlo, Consolas, monospace;
   background-color: var(--dark-grey);

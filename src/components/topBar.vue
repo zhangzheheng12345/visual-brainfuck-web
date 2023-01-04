@@ -7,9 +7,9 @@
     </button>
     <div id="menu" v-show="!menuHidden">
       <div>
-        <a href="https://github.com/zhangzheheng12345/visual-brainfuck-web"
-          >GitHub Repo</a
-        >
+        <a href="https://github.com/zhangzheheng12345/visual-brainfuck-web">
+          GitHub Repo
+        </a>
       </div>
       <div><a href="https://github.com/zhangzheheng12345">My Profile</a></div>
       <div>
@@ -80,7 +80,6 @@ export default {
   right: 5px;
   top: 55px;
   border-radius: 8px;
-  padding: 5px;
   background-color: var(--grey);
   z-index: 99;
 }
@@ -88,19 +87,17 @@ export default {
 #menu > div {
   background-color: var(--very-dark-grey);
   border-radius: 5px;
-  margin: 8px;
   padding: 5px;
 }
 
 #menu > div > a {
   color: #fff;
-  font-size: 17px;
+  font-size: 16px;
   font-family: "IBM Plex Mono", Courier, Menlo, Consolas, monospace;
   text-decoration: none;
-  padding: 5px;
 }
 
 #menu > div:hover {
-  transform: scale(1.1, 1);
+  background-color: var(--dark-grey);
 }
 </style>
