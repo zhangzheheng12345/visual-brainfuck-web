@@ -34,7 +34,6 @@ export default {
     --dark-grey: #555;
     --very-dark-grey: #2c2c2c;
     --extremely-dark-grey: #1c1c1c;
-    background-color: var(--extremely-dark-grey);
 }
 
 /* scrollbar style */

@@ -15,8 +15,6 @@
 #mainBox {
     padding: 10px;
     background-color: var(--very-dark-grey);
-    margin: 20px;
-    border-radius: 10px;
 }
 </style>
 

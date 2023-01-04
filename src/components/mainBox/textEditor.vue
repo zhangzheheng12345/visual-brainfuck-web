@@ -99,7 +99,7 @@ export default {
   float: right;
   margin: 5px;
   padding: 4px;
-  background-color: var(--dark-grey);
+  background-color: var(--extremely-dark-grey);
   border-width: 0px;
   border-radius: 10px;
   width: 40px;

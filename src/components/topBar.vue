@@ -38,13 +38,13 @@ export default {
 #topBarReplacer {
   width: 100%;
   height: 40px;
-  background-color: var(--extremely-dark-grey);
+  background-color: var(--very-dark-grey);
 }
 
 #topBar {
   width: 100%;
   height: 40px;
-  background-color: var(--very-dark-grey);
+  background-color: var(--extremely-dark-grey);
   padding: 3px;
   position: fixed;
   right: 0px;
@@ -59,7 +59,7 @@ export default {
 
 #menuButton {
   border-width: 0px;
-  background-color: var(--very-dark-grey);
+  background-color: var(--extremly-dark-grey);
   padding: 6px;
   position: absolute;
   top: 2px;
@@ -79,15 +79,13 @@ export default {
   position: absolute;
   right: 5px;
   top: 55px;
-  border-radius: 8px;
-  background-color: var(--grey);
+  background-color: var(--extremely-dark-grey);
   z-index: 99;
 }
 
 #menu > div {
-  background-color: var(--very-dark-grey);
-  border-radius: 5px;
-  padding: 5px;
+  background-color: var(--extremely-dark-grey);
+  padding: 10px;
 }
 
 #menu > div > a {
