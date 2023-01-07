@@ -2,17 +2,17 @@
 
 ![Website image](https://s1.ax1x.com/2022/12/19/zqRsw8.jpg)
 
-A Brainf\*ck interpreter online. Visit [visual-brainfuck-web Github Page](https://visual-brainfuck-web.vercel.app) to have a try.
+A Brainf\*ck interpreter online. Visit [visual-brainfuck-web](https://visual-brainfuck-web.netlify.app) to have a try.
 
 If you don't have any idea about what Brainf\*ck exactly is, visit [Brainf\*ck Wiki](https://esolangs.org/wiki/brainfuck).
 
-The website use Vue.
+The website use Vue3.
 
 ## Usage
 
 ### To run & stop
 
-The green triangle button runs the Brainf\*ck code in the large text area. The green square button immediately stops the running program. The green button with two lines stops the running program.
+The green triangle button runs the Brainf\*ck code in the large text area. The green square button immediately stops the running program. The green button with two lines suspends the running program.
 
 ### Minify your code
 
