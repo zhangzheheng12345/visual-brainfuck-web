@@ -14,7 +14,7 @@ The website use Vue3.
 
 The green triangle button runs the Brainf\*ck code in the large text area. The green square button immediately stops the running program. The green button with two lines suspends the running program.
 
-### Minify your code
+### Minimize your code
 
 Click the purple button with a lightning in the center. It will remove comments, spaces, tabs and line breaks in your code.
 

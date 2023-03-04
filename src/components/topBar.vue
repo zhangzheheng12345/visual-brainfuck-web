@@ -23,15 +23,15 @@
 export default {
   data() {
     return {
-      menuHidden: true,
-    };
+      menuHidden: true
+    }
   },
   methods: {
     toggleMenu() {
-      this.menuHidden = !this.menuHidden;
-    },
-  },
-};
+      this.menuHidden = !this.menuHidden
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -91,7 +91,7 @@ export default {
 #menu > div > a {
   color: #fff;
   font-size: 16px;
-  font-family: "IBM Plex Mono", Courier, Menlo, Consolas, monospace;
+  font-family: 'IBM Plex Mono', Courier, Menlo, Consolas, monospace;
   text-decoration: none;
 }
 

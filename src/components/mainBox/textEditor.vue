@@ -4,7 +4,7 @@
       id="IOlabel"
       @click="toggleIOlabel"
       :title="IorO ? 'toggle to ouput' : 'toggle to input'"
-      >{{ IorO ? "IN" : "OUT" }}</span
+      >{{ IorO ? 'IN' : 'OUT' }}</span
     >
     <input id="in" title="input" v-model="_in" v-show="IorO" />
     <input id="out" title="out" v-model="out" v-show="!IorO" readonly />
@@ -17,55 +17,55 @@
 
 <script>
 export default {
-  props: ["textareaReadonly", "inIn", "inOut", "inCodes", "inIorO"],
+  props: ['textareaReadonly', 'inIn', 'inOut', 'inCodes', 'inIorO'],
   emits: [
-    "clear",
-    "update:inIn",
-    "update:inOut",
-    "update:inCodes",
-    "update:inIorO",
+    'clear',
+    'update:inIn',
+    'update:inOut',
+    'update:inCodes',
+    'update:inIorO'
   ],
   computed: {
     _in: {
       // in is a key word in Vue
       get() {
-        return this.inIn;
+        return this.inIn
       },
       set(value) {
-        this.$emit("update:inIn", value);
-      },
+        this.$emit('update:inIn', value)
+      }
     },
     out: {
       get() {
-        return this.inOut;
+        return this.inOut
       },
       set(value) {
-        this.$emit("update:inOut", value);
-      },
+        this.$emit('update:inOut', value)
+      }
     },
     codes: {
       get() {
-        return this.inCodes;
+        return this.inCodes
       },
       set(value) {
-        this.$emit("update:inCodes", value);
-      },
+        this.$emit('update:inCodes', value)
+      }
     },
     IorO: {
       get() {
-        return this.inIorO;
+        return this.inIorO
       },
       set(value) {
-        this.$emit("update:inIorO", value);
-      },
-    },
+        this.$emit('update:inIorO', value)
+      }
+    }
   },
   methods: {
     toggleIOlabel() {
-      this.IorO = !this.IorO;
-    },
-  },
-};
+      this.IorO = !this.IorO
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -78,7 +78,7 @@ export default {
   margin: 5px;
   padding: 5px;
   height: 25px;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu';
   font-size: 21px;
   cursor: default;
 }
@@ -120,7 +120,7 @@ export default {
   background-color: var(--very-dark-grey);
   color: #fff;
   font-size: 16px;
-  font-family: "IBM Plex Mono", Courier, Menlo, Consolas, monospace;
+  font-family: 'IBM Plex Mono', Courier, Menlo, Consolas, monospace;
   box-sizing: border-box;
   resize: none;
   overflow: auto;
@@ -146,6 +146,6 @@ export default {
   width: 75%;
   color: var(--very-dark-grey);
   font-size: 18px;
-  font-family: "IBM Plex Mono", Courier, Menlo, Consolas, monospace;
+  font-family: 'IBM Plex Mono', Courier, Menlo, Consolas, monospace;
 }
 </style>

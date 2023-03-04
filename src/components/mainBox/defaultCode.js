@@ -26,4 +26,4 @@ export const defaultCodes = `# This program will output "Hello world!"
 <.
 +++.----- -.----- ---.
 >>+.
->++.`// Default code in textarea
+>++.` // Default code in textarea

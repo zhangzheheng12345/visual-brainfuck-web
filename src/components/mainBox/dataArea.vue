@@ -19,8 +19,8 @@
 
 <script>
 export default {
-  props: ["data", "ptr", "dataHidden"],
-};
+  props: ['data', 'ptr', 'dataHidden']
+}
 </script>
 
 <style scoped>
@@ -82,7 +82,7 @@ export default {
   margin: 3px;
   font-size: 18px;
   color: #fff;
-  font-family: "Ubuntu", Courier, Menlo, Consolas, monospace;
+  font-family: 'Ubuntu', Courier, Menlo, Consolas, monospace;
   background-color: var(--dark-grey);
   border-radius: 5px;
   cursor: default;
