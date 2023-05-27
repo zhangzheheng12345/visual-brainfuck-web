@@ -37,6 +37,11 @@ export default {
   background-color: var(--very-dark-grey);
 }
 
+button {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
 /* scrollbar style */
 ::-webkit-scrollbar {
   width: 10px;
