@@ -53,8 +53,7 @@ export default {
 }
 
 #bfLogo {
-  transform-origin: 20px -3px;
-  transform: scale(0.05, 0.043);
+  height: 34px;
 }
 
 #menuButton {
