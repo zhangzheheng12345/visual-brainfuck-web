@@ -12,6 +12,17 @@ export default defineConfig({
   plugins: [
     vue(),
     Unocss({
+      theme: {
+        colors: {
+          lightGreen: 'var(--green)',
+          deepGreen: 'var(--deep-green)',
+          lightPurple: 'var(--purple)',
+          deepPurple: 'var(--deep-purple)',
+          veryDarkGrey: 'var(--very-dark-grey)',
+          lightAzure: 'var(--azure)',
+          deepAzure: 'var(--deep-azure)'
+        }
+      },
       presets: [
         presetUno({
           dark: 'media',

@@ -9,7 +9,8 @@
   --deep-green: #0f8325;
   --purple: #8a47ee;
   --deep-purple: #672cce;
-  --azure: rgb(11, 131, 243);
+  --azure: rgb(11, 137, 255);
+  --deep-azure: rgb(0, 91, 177);
   --light-grey: #ccc;
   --grey: #999;
   --dark-grey: #555;
@@ -30,15 +31,10 @@ button {
 
 /* scrollbar style */
 ::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  border-radius: 5px;
-  background-color: var(--extremely-dark-grey);
+  width: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background-color: var(--light-grey);
+  border-radius: 2px;
+  background-color: var(--grey);
 }

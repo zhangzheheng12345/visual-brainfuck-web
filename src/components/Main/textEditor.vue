@@ -1,18 +1,16 @@
 <template>
-  <div id="wrapText">
-    <input id="in" title="input" v-model="runtimeData.input" />
+  <div class="bg-transparent">
+    <input title="input" v-model="runtimeData.input" />
     <div class="w-100%"></div>
-    <input id="out" title="out" v-model="runtimeData.output" readonly />
+    <input title="out" v-model="runtimeData.output" readonly />
     <button
-      id="clearCode"
       @click="codes.clearCode"
       title="clear the codes"
-      class="inline-flex justify-center items-center"
+      class="inline-flex justify-center items-center rounded-6px p-7px pl-9px pr-9px float-right bg-light-azure border-deep-azure border-3px border-solid"
     >
       <span class="i-mingcute-delete-fill text-white text-25px"></span>
     </button>
     <textarea
-      id="text"
       v-model="codes.codes"
       :readonly="
         runningState.runningState === 'running' ||
@@ -37,36 +35,13 @@ onMounted(() => {
 </script>
 
 <style scoped>
-#wrapText {
-  margin-left: 1px;
-  padding: 2px;
-  border-radius: 5px;
-  background-color: var(--very-dark-grey);
-  width: 100%;
-}
-
-#clearCode {
-  float: right;
-  margin: 5px;
-  padding: 4px;
-  background-color: var(--extremely-dark-grey);
-  border-width: 0px;
-  border-radius: 10px;
-  width: 40px;
-  height: 35px;
-  color: #fff;
-}
-
-#clearCode:hover {
-  transform: scale(1.1, 1.1);
-}
-
-#text {
-  height: 450px;
+textarea {
+  height: 80vh;
   width: 100%;
   margin: 5px;
-  border-color: var(--very-dark-grey);
+  margin-top: 10px;
   border-radius: 0px;
+  border-width: 0px;
   background-color: var(--very-dark-grey);
   color: #fff;
   font-size: 16px;
@@ -77,8 +52,7 @@ onMounted(() => {
   scroll-behavior: smooth;
 }
 
-#in,
-#out {
+input {
   float: left;
   height: 25px;
   border-radius: 5px;

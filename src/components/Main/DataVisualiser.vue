@@ -1,8 +1,7 @@
 <template>
-  <div id="wrapData">
+  <div class="flex items-center pt-7px pb-7px">
     <button
-      id="showData"
-      class="inline-flex justify-center items-center"
+      class="inline-flex justify-center items-center bg-transparent border-0px m-5px"
       @click="showDataVisualiser = !showDataVisualiser"
       :title="showDataVisualiser ? 'hide the data area' : 'show the data area'"
     >
@@ -37,22 +36,10 @@ watchEffect(() => {
 </script>
 
 <style scoped>
-#showData {
-  height: 25px;
-  width: 25px;
-  margin-right: 10px;
-  margin-top: 10px;
-  padding: 2px;
-  background-color: var(--very-dark-grey);
-  border-width: 0px;
-  border-radius: 0px;
-}
-
 #wrapData {
   display: flex;
   margin: 10px;
   margin-left: 1px;
-  min-height: 42px;
 }
 
 #data {
