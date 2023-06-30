@@ -2,11 +2,14 @@
   <div id="wrapData">
     <button
       id="showData"
-      :class="{ toRotate: !dataHidden }"
+      class="inline-flex justify-center items-center"
       @click="$emit('toggleData')"
       :title="dataHidden ? 'show the data area' : 'hide the data area'"
     >
-      <img src="./svgs/triangle.svg" />
+      <span
+        class="i-mingcute-triangle-fill text-white text-26px rotate--90 transition-100"
+        :class="!dataHidden ? 'rotate-90deg' : 'rotate-180deg'"
+      ></span>
     </button>
     <div id="data" v-show="!dataHidden">
       <div v-for="(item, index) in data" :class="{ selected: ptr == index }">
@@ -33,10 +36,6 @@ export default {
   background-color: var(--very-dark-grey);
   border-width: 0px;
   border-radius: 0px;
-}
-
-.toRotate {
-  transform: rotate(90deg);
 }
 
 #wrapData {

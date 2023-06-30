@@ -8,8 +8,13 @@
     >
     <input id="in" title="input" v-model="_in" v-show="IorO" />
     <input id="out" title="out" v-model="out" v-show="!IorO" readonly />
-    <button id="clearCode" @click="$emit('clear')" title="clear the codes">
-      <img src="./svgs/trash.svg" type="image/svg+xml" />
+    <button
+      id="clearCode"
+      @click="$emit('clear')"
+      title="clear the codes"
+      class="inline-flex justify-center items-center"
+    >
+      <span class="i-mingcute-delete-fill text-white text-25px"></span>
     </button>
     <textarea id="text" v-model="codes" :readonly="textareaReadonly"></textarea>
   </div>
@@ -125,12 +130,6 @@ export default {
   resize: none;
   overflow: auto;
   scroll-behavior: smooth;
-}
-
-#text:focus,
-#in:focus,
-#out:focus {
-  outline: 0px;
 }
 
 #in,

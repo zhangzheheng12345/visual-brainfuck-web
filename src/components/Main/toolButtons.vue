@@ -1,48 +1,43 @@
 <template>
   <button
     id="run"
-    class="tool-button"
     title="run the program"
     v-show="toPause || !toRun"
     @click="$emit('run')"
   >
-    <img src="./svgs/play.svg" type="image/svg+xml" />
+    <span class="i-mingcute-play-fill"></span>
   </button>
   <button
     id="pause"
-    class="tool-button"
     title="pause the program"
     v-show="toRun && !toPause"
     @click="$emit('pause')"
   >
-    <img src="./svgs/pause.svg" type="image/svg+xml" />
+    <span class="i-mingcute-pause-fill"></span>
   </button>
   <button
     id="stop"
-    class="tool-button"
     title="stop the program"
     v-show="toRun"
     @click="$emit('stop')"
   >
-    <img src="./svgs/stop.svg" type="image/svg+xml" />
+    <span class="i-mingcute-stop-fill"></span>
   </button>
   <button
     id="minify"
-    class="tool-button"
     title="minimize the codes"
     v-show="!minimized"
     @click="$emit('minimize')"
   >
-    <img src="./svgs/lightning.svg" type="image/svg+xml" />
+    <span class="i-mingcute-lightning-fill"></span>
   </button>
   <button
     id="revert"
-    class="tool-button"
     title="revert the codes"
     v-show="minimized"
     @click="$emit('revert')"
   >
-    <img src="./svgs/revert.svg" type="image/svg+xml" />
+    <span class="i-mingcute-back-fill"></span>
   </button>
   <input
     id="speed"
@@ -73,17 +68,19 @@ export default {
 </script>
 
 <style scoped>
-.tool-button {
-  height: 40px;
-  width: 45px;
-  margin: 5px;
+button {
+  padding: 6px 9px;
+  margin: 6px;
   border-width: 0px;
   border-radius: 10px;
   border-style: solid;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.tool-button:hover {
-  transform: scale(1.1, 1.1);
+button span {
+  background-color: #fff;
+  font-size: 25px;
 }
 
 #run,
@@ -92,18 +89,6 @@ export default {
   background-color: var(--green);
   border-color: var(--deep-green);
   border-width: 3px;
-}
-
-#stop > * {
-  transform: translate(0px, 2px);
-}
-
-#minify > * {
-  transform: translate(2px, 2px);
-}
-
-#revert > * {
-  transform: scale(1.2, 1.4) translate(0px, 1px);
 }
 
 #minify,
