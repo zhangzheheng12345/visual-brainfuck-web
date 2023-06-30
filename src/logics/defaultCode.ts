@@ -1,4 +1,4 @@
-// A simple JS file to put default text in
+// A simple TS file to put default text in
 export const defaultCodes = `# This program will output "Hello world!"
 # '#' declares a single line comment
 +++++ +++

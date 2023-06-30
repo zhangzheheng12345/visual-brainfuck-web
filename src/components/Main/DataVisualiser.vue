@@ -3,27 +3,37 @@
     <button
       id="showData"
       class="inline-flex justify-center items-center"
-      @click="$emit('toggleData')"
-      :title="dataHidden ? 'show the data area' : 'hide the data area'"
+      @click="showDataVisualiser = !showDataVisualiser"
+      :title="showDataVisualiser ? 'hide the data area' : 'show the data area'"
     >
       <span
         class="i-mingcute-triangle-fill text-white text-26px rotate--90 transition-100"
-        :class="!dataHidden ? 'rotate-90deg' : 'rotate-180deg'"
+        :class="showDataVisualiser ? 'rotate-180deg' : 'rotate-90deg'"
       ></span>
     </button>
-    <div id="data" v-show="!dataHidden">
-      <div v-for="(item, index) in data" :class="{ selected: ptr == index }">
+    <div id="data" v-show="showDataVisualiser">
+      <div
+        v-for="(item, index) in runtimeData.memory"
+        :class="runtimeData.pointer === index ? 'selected' : ''"
+      >
         {{ item }}
       </div>
     </div>
-    <div id="dataHiddenReminder" v-show="dataHidden">DATA AREA HIDDEN</div>
   </div>
 </template>
 
-<script>
-export default {
-  props: ['data', 'ptr', 'dataHidden']
-}
+<script setup lang="ts">
+import { ref, watchEffect } from 'vue'
+import { useRuntimeData, useRunningState } from '@/logics/editorState'
+
+const showDataVisualiser = ref(true)
+
+const runtimeData = useRuntimeData()
+const runningState = useRunningState()
+
+watchEffect(() => {
+  runningState.runMode = showDataVisualiser.value ? 'delay' : 'no-delay'
+})
 </script>
 
 <style scoped>
@@ -73,17 +83,6 @@ export default {
 }
 
 #data > div.selected {
-  transform: scale(1.1, 1.2);
-}
-
-#dataHiddenReminder {
-  padding: 10px;
-  margin: 3px;
-  font-size: 18px;
-  color: #fff;
-  font-family: 'Ubuntu', Courier, Menlo, Consolas, monospace;
-  background-color: var(--dark-grey);
-  border-radius: 5px;
-  cursor: default;
+  transform: scale(1.05, 1.08);
 }
 </style>

@@ -1,97 +1,42 @@
 <template>
   <div id="wrapText">
-    <span
-      id="IOlabel"
-      @click="toggleIOlabel"
-      :title="IorO ? 'toggle to ouput' : 'toggle to input'"
-      >{{ IorO ? 'IN' : 'OUT' }}</span
-    >
-    <input id="in" title="input" v-model="_in" v-show="IorO" />
-    <input id="out" title="out" v-model="out" v-show="!IorO" readonly />
+    <input id="in" title="input" v-model="runtimeData.input" />
+    <div class="w-100%"></div>
+    <input id="out" title="out" v-model="runtimeData.output" readonly />
     <button
       id="clearCode"
-      @click="$emit('clear')"
+      @click="codes.clearCode"
       title="clear the codes"
       class="inline-flex justify-center items-center"
     >
       <span class="i-mingcute-delete-fill text-white text-25px"></span>
     </button>
-    <textarea id="text" v-model="codes" :readonly="textareaReadonly"></textarea>
+    <textarea
+      id="text"
+      v-model="codes.codes"
+      :readonly="
+        runningState.runningState === 'running' ||
+        runningState.runningState === 'paused'
+      "
+    ></textarea>
   </div>
 </template>
 
-<script>
-export default {
-  props: ['textareaReadonly', 'inIn', 'inOut', 'inCodes', 'inIorO'],
-  emits: [
-    'clear',
-    'update:inIn',
-    'update:inOut',
-    'update:inCodes',
-    'update:inIorO'
-  ],
-  computed: {
-    _in: {
-      // in is a key word in Vue
-      get() {
-        return this.inIn
-      },
-      set(value) {
-        this.$emit('update:inIn', value)
-      }
-    },
-    out: {
-      get() {
-        return this.inOut
-      },
-      set(value) {
-        this.$emit('update:inOut', value)
-      }
-    },
-    codes: {
-      get() {
-        return this.inCodes
-      },
-      set(value) {
-        this.$emit('update:inCodes', value)
-      }
-    },
-    IorO: {
-      get() {
-        return this.inIorO
-      },
-      set(value) {
-        this.$emit('update:inIorO', value)
-      }
-    }
-  },
-  methods: {
-    toggleIOlabel() {
-      this.IorO = !this.IorO
-    }
-  }
-}
+<script setup lang="ts">
+import { defaultCodes } from '@/logics/defaultCode'
+import { useCodes, useRunningState, useRuntimeData } from '@/logics/editorState'
+import { onMounted } from 'vue'
+
+const codes = useCodes()
+const runningState = useRunningState()
+const runtimeData = useRuntimeData()
+
+onMounted(() => {
+  if (codes.codes === '') codes.codes = defaultCodes
+})
 </script>
 
 <style scoped>
-#IOlabel {
-  /* width: 25px; */
-  color: #fff;
-  background-color: var(--dark-grey);
-  float: left;
-  border-radius: 5px;
-  margin: 5px;
-  padding: 5px;
-  height: 25px;
-  font-family: 'Ubuntu';
-  font-size: 21px;
-  cursor: default;
-}
-
-#IOlabel:hover {
-  transform: scale(1.1, 1.1);
-}
-
 #wrapText {
   margin-left: 1px;
   padding: 2px;

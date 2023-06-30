@@ -2,69 +2,65 @@
   <button
     id="run"
     title="run the program"
-    v-show="toPause || !toRun"
-    @click="$emit('run')"
+    v-show="
+      runningState.runningState === 'stopped' ||
+      runningState.runningState === 'paused'
+    "
+    @click="runningState.run"
   >
     <span class="i-mingcute-play-fill"></span>
   </button>
   <button
     id="pause"
     title="pause the program"
-    v-show="toRun && !toPause"
-    @click="$emit('pause')"
+    v-show="runningState.runningState === 'running'"
+    @click="runningState.pause"
   >
     <span class="i-mingcute-pause-fill"></span>
   </button>
   <button
     id="stop"
     title="stop the program"
-    v-show="toRun"
-    @click="$emit('stop')"
+    v-show="
+      runningState.runningState === 'running' ||
+      runningState.runningState === 'paused'
+    "
+    @click="runningState.stop"
   >
     <span class="i-mingcute-stop-fill"></span>
   </button>
-  <button
-    id="minify"
-    title="minimize the codes"
-    v-show="!minimized"
-    @click="$emit('minimize')"
-  >
+  <button id="minify" title="minimize the codes" @click="codes.minimize">
     <span class="i-mingcute-lightning-fill"></span>
-  </button>
-  <button
-    id="revert"
-    title="revert the codes"
-    v-show="minimized"
-    @click="$emit('revert')"
-  >
-    <span class="i-mingcute-back-fill"></span>
   </button>
   <input
     id="speed"
     type="range"
     min="0"
-    max="300"
+    :max="MAX_RUNNING_DELAY"
     v-model="speed"
     step="2"
     title="change the speed"
   />
 </template>
 
-<script>
-export default {
-  props: ['toRun', 'toPause', 'minimized', 'inSpeed'],
-  emits: ['run', 'pause', 'stop', 'miniminimize', 'revert', 'update:inSpeed'],
-  computed: {
-    speed: {
-      get() {
-        return this.inSpeed
-      },
-      set(value) {
-        this.$emit('update:inSpeed', value)
-      }
-    }
-  }
-}
+<script setup lang="ts">
+import {
+  useRunningState,
+  useRuntimeData,
+  useCodes,
+  MAX_RUNNING_DELAY
+} from '@/logics/editorState'
+import { ref, watchEffect } from 'vue'
+
+const codes = useCodes()
+const runningState = useRunningState()
+const runtimeData = useRuntimeData()
+
+const speed = ref(300 - runtimeData.delay)
+
+watchEffect(() => {
+  runtimeData.delay = 300 - speed.value
+})
 </script>
 
 <style scoped>
